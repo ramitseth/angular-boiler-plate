@@ -1,0 +1,25 @@
+<div class="navbar-custom">
+  <div class="nav-item" (click)="goToDashboard()">
+    <i class="material-icons">dashboard</i>
+    <div class="row" *ngIf="isOpen">Dashboard</div>
+  </div>
+
+  <div class="nav-item" (click)="activateReports()">
+    <i class="material-icons">list_alt</i>
+    <div class="row" *ngIf="isOpen">
+      <span>Reports</span>
+      <i class="material-icons" *ngIf="!showReports">keyboard_arrow_down</i>
+      <i class="material-icons" *ngIf="showReports">keyboard_arrow_up</i>
+    </div>
+  </div>
+  <div *ngIf="showReports">
+    <div class="nav-item margin-left" (click)="goToReportOne()">
+        <i class="material-icons">description</i>
+      <div class="row" *ngIf="isOpen">Report One</div>
+    </div>
+    <div class="nav-item margin-left" (click)="goToReportTwo()">
+        <i class="material-icons">view_list</i>
+      <div class="row" *ngIf="isOpen">Report Two</div>
+    </div>
+  </div>
+</div>

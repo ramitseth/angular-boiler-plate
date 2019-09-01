@@ -1,0 +1,31 @@
+<div class="container-signup bg-light">
+  <form [formGroup]="signupForm" (ngSubmit)="signup()">
+    <mat-card>
+      <mat-card-subtitle class="signup-title">Registration Page</mat-card-subtitle>
+      <div class="signup-form">
+        <mat-form-field>
+          <input matInput placeholder="First Name" formControlName="firstName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Last Name" formControlName="lastName">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email">
+        </mat-form-field>
+        <mat-error *ngIf="signupForm.controls.email.touched && signupForm.controls.email.hasError('required')">
+          Email is required
+        </mat-error>
+        <mat-form-field>
+          <input matInput placeholder="Mobile Number" formControlName="phone">
+        </mat-form-field>
+
+        <mat-checkbox class="checkbox" formControlName="checked">Agree to terms and conditions</mat-checkbox>
+        <div class="signup-btn">
+          <button mat-button mat-raised-button color="primary" (click)="signup()">Sign Up</button>
+          <button mat-button mat-raised-button color="secondary" (click)="resetForm()">Cancel</button>
+        </div>
+      </div>
+    </mat-card>
+  </form>
+</div>

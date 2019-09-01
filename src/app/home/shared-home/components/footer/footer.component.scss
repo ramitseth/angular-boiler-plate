@@ -1,0 +1,19 @@
+.page-footer {
+  background-color: #f5f5f5;
+  position: fixed;
+  width: 100vw;
+  height: 64px;
+  border-top: solid 1px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .icons-container {
+    padding: 0px 20px;
+  }
+  .item {
+    padding: 0px 5px;
+  }
+  .icon-images {
+    height: 24px;
+  }
+}

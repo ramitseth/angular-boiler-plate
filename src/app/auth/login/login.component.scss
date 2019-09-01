@@ -1,0 +1,25 @@
+.container-login {
+  display: grid;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
+  .login-title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .login-form {
+    padding: 50px;
+    display: grid;
+    .forgot {
+      margin: 10px;
+    }
+  }
+  .flex-right {
+    display:flex;
+    justify-content: flex-end;
+  }
+  .signup {
+      margin: 50px 0px;
+      text-align: center;
+  }
+}

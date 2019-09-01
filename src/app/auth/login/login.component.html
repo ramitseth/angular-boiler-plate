@@ -1,0 +1,23 @@
+<div class="container-login">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-card>
+        <mat-card-subtitle class="login-title">Login Page</mat-card-subtitle>
+      <div class="login-form">
+        <mat-form-field>
+          <input matInput placeholder="Username" formControlName="username">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+        <button mat-button value="submit" mat-raised-button color="primary" (click)="login()">Login</button>
+      </div>
+      <div class="flex-right">
+        <button mat-button class="forgot" (click)="goToForgot()">Forgot Password?</button>
+      </div>
+    </mat-card>
+  </form>
+
+  <div class="signup">
+    <button mat-stroked-button (click)="goToSignup()">Click here to Sign Up</button>
+  </div>
+</div>

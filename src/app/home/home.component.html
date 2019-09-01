@@ -1,0 +1,15 @@
+<div>
+  <app-header [isOpen]="isOpen" (toggleSidebar)="toggleSidebar($event)"></app-header>
+</div>
+<mat-sidenav-container class="navbar">
+  <mat-sidenav mode="side" [(opened)]="isOpen">
+    <app-sidebar [isOpen]="isOpen"></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="side-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<div>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,17 @@
+
+.mat-drawer {
+  background-color: #f5f5f5 !important;
+}
+.mat-checkbox-checked, .mat-checkbox:active  {
+    .mat-ripple-element {
+      background: #673ab7 !important;
+    }
+  }
+
+  .mat-checkbox-checked .mat-checkbox-background {
+    background-color: #673ab7 !important;
+  }
+
+  .material-icons {
+    cursor: pointer;
+  }
