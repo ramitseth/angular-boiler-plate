@@ -1,4 +1,4 @@
-# boilerplateApp
+# BoilerPlateApp
 
 ## Introduction
 
