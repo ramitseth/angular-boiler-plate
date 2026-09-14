@@ -1,37 +1,88 @@
 # BoilerPlateApp
 
-## Introduction
+## Overview
 
-This is an Angular Boiler Plate app that includes -
-1. Skeleton and starter pack for making Angular apps
-2. Most Commonly used Pages like - login, signup, home, dashboard, etc.
-3. Responsive structure and design using the CSS Flex and Grid Layout Module
-4. UI components made by using Angular Material Design standards
-5. Feature Modules (Auth, Home and Reports) with routing and hierarchical lazy loading implemented
-6. Core Module that takes care of singleton services, classes, interfaces, etc.
-7. Common Shared Module that handles components, directives, guards, 3rd party modules, etc. to be used by all feature modules
-8. Feature Shared Module for Home Module that includes common features to be used only by Home Module
+Angular starter application with:
 
-## Installatation Instructions
+1. Authentication pages for login, signup, and password recovery
+2. A home shell with dashboard and reports
+3. Responsive Angular Material UI
+4. Standalone components and lazy-loaded standalone routes
+5. Zoneless change detection with signals for local component state
+6. Centralized route paths in `src/app/route-paths.ts`
 
-Open base folder with the name angular-boiler-plate in command prompt or terminal and then run `npm i` to install all the dependencies.
+## Prerequisites
 
-## Run Development server
+- Node.js `22.22.3` or newer within Node 22
+- npm 10 or newer
+- Chrome or Chromium for Karma unit tests
+- Playwright Chromium for end-to-end tests
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The required Node version is pinned in `.nvmrc` and enforced by the `engines` field in
+`package.json`. With nvm installed, run:
+
+```bash
+nvm install
+nvm use
+```
+
+## Install
+
+```bash
+npm install
+```
+
+Install the Playwright browser once before running end-to-end tests:
+
+```bash
+npm run e2e:install
+```
+
+## Development server
+
+```bash
+npm start
+```
+
+Open `http://localhost:4200/`. The development server reloads automatically when source files
+change.
+
+## Production build
+
+```bash
+npm run build -- --configuration production
+```
+
+Build artifacts are written to `dist/boilerplate/`.
+
+## Validation
+
+Run the ESLint checks:
+
+```bash
+npm run lint
+```
+
+Run the unit tests through Karma and Jasmine:
+
+```bash
+npm test
+```
+
+Run the Playwright end-to-end tests:
+
+```bash
+npm run e2e
+```
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Use the Angular CLI to generate standalone application code:
 
-## Make Deployable Build
+```bash
+npx ng generate component component-name --standalone
+npx ng generate directive directive-name --standalone
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Other supported generators include `pipe`, `service`, `class`, `guard`, `interface`, and
+`enum`.
