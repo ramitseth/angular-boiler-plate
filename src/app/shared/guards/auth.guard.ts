@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { CanLoad } from '@angular/router';
-import { Observable } from 'rxjs';
+import { CanMatch } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanLoad {
+export class AuthGuard implements CanMatch {
 
-  canLoad(): Observable<boolean> | Promise<boolean> | boolean {
+  canMatch(): boolean {
     console.log('guard reached');
     return true;
   }

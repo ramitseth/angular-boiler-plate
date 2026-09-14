@@ -8,7 +8,7 @@ describe('DefaultModalComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DefaultModalComponent ]
+      imports: [DefaultModalComponent]
     })
     .compileComponents();
   }));

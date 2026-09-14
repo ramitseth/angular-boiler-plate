@@ -13,9 +13,9 @@
         <mat-form-field>
           <input matInput placeholder="Email" formControlName="email">
         </mat-form-field>
-        <mat-error *ngIf="signupForm.controls.email.touched && signupForm.controls.email.hasError('required')">
-          Email is required
-        </mat-error>
+        @if (signupForm.controls.email.touched && signupForm.controls.email.hasError('required')) {
+          <mat-error>Email is required</mat-error>
+        }
         <mat-form-field>
           <input matInput placeholder="Mobile Number" formControlName="phone">
         </mat-form-field>

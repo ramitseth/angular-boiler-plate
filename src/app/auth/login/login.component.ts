@@ -1,14 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ROUTE_URLS } from '../../route-paths';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
+  imports: [ReactiveFormsModule, MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  public loginForm: FormGroup;
+  public loginForm!: FormGroup;
 
   constructor(private router: Router) {}
 
@@ -21,16 +29,15 @@ export class LoginComponent implements OnInit {
 
   public login(): void {
     if (this.loginForm.value.username && this.loginForm.value.password) {
-      this.router.navigate(['home']);
-    } else {
+      this.router.navigate([ROUTE_URLS.home]);
     }
   }
 
   public goToSignup(): void {
-    this.router.navigate(['auth/signup']);
+    this.router.navigate([ROUTE_URLS.signup]);
   }
 
   public goToForgot(): void {
-    this.router.navigate(['auth/forgot']);
+    this.router.navigate([ROUTE_URLS.forgotPassword]);
   }
 }
