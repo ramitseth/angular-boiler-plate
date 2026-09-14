@@ -8,7 +8,7 @@ describe('ReportTwoComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReportTwoComponent ]
+      imports: [ReportTwoComponent]
     })
     .compileComponents();
   }));

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-default-modal',
+  standalone: true,
   templateUrl: './default-modal.component.html',
   styleUrls: ['./default-modal.component.scss']
 })

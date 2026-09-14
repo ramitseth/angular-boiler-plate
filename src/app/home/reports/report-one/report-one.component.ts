@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-report-one',
+  standalone: true,
   templateUrl: './report-one.component.html',
   styleUrls: ['./report-one.component.scss']
 })

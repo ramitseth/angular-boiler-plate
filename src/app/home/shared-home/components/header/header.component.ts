@@ -1,26 +1,27 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ROUTE_URLS } from '../../../../route-paths';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
+  imports: [MatToolbarModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-
-  @Input() isOpen: boolean;
-  @Output() toggleSidebar: EventEmitter<boolean> = new EventEmitter<boolean>();
+export class HeaderComponent {
+  readonly isOpen = input(false);
+  readonly toggleSidebar = output<boolean>();
 
   constructor(private router: Router) {}
 
-  ngOnInit() {}
-
   public toggle(): void {
-    this.toggleSidebar.emit(!this.isOpen);
+    this.toggleSidebar.emit(!this.isOpen());
   }
 
   public logout(): void {
-    this.router.navigate(['auth/login']);
+    this.router.navigate([ROUTE_URLS.login]);
   }
 
 }
